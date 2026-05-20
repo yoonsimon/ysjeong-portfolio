@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+_bmad
+_bmad-output
+.claude
+CLAUDE.md
+*.pptx
+
+# Personal / internal docs (do not publish)
+resume_*.md
+DR-*.md
+PRD_*.md
+portfolio_index.md
+ux-flow_*.md
+wireframe_*.md
+client_*.json
+fanding-scraper/
+INVITE/
+docs/
+personal/
+# Internal BMAD / RAG materials (do not publish)
+기획실 RAG 사용 가이드/
+BMAD 실 사용 인원 대상 설명/
+BMAD 설문조사/
+# MCP server config (contains OAuth secrets)
+.mcp.json
+# Personal harness layer (local-only operational knowledge)
+handbook/
+services/
+history/

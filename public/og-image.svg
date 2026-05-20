@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f9fafb"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#059669"/>
+  <text x="100" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#191f28">Technical PO</text>
+  <text x="100" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#059669">정윤상</text>
+  <text x="100" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#6b7684">데이터와 인프라의 맥락을 잇는 프로덕트 아키텍트</text>
+  <rect x="100" y="430" width="180" height="40" rx="8" fill="#059669"/>
+  <text x="140" y="457" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="white">NHN Commerce</text>
+  <rect x="300" y="430" width="140" height="40" rx="8" fill="white" stroke="#e5e8eb" stroke-width="1.5"/>
+  <text x="328" y="457" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#4e5968">Technical PO</text>
+</svg>

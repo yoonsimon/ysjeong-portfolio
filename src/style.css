@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-on-primary-container: #000a7b;
+  --color-surface: #060e20;
+  --color-error-dim: #d73357;
+  --color-on-surface: #dee5ff;
+  --color-error: #ff6e84;
+  --color-outline-variant: #40485d;
+  --color-inverse-on-surface: #4d556b;
+  --color-primary-container: #8d98ff;
+  --color-on-primary-fixed-variant: #0c1889;
+  --color-secondary-fixed-dim: #dbb4ff;
+  --color-inverse-primary: #4954bc;
+  --color-primary-fixed-dim: #7f8af6;
+  --color-surface-bright: #1f2b49;
+  --color-primary: #9fa7ff;
+  --color-surface-container-high: #141f38;
+  --color-surface-dim: #060e20;
+  --color-tertiary-fixed: #65fde6;
+  --color-on-tertiary-fixed: #004a41;
+  --color-on-secondary-fixed-variant: #7511c3;
+  --color-secondary-container: #6f00be;
+  --color-on-error: #490013;
+  --color-surface-container-highest: #192540;
+  --color-tertiary-dim: #48e5d0;
+  --color-primary-dim: #8a95ff;
+  --color-on-error-container: #ffb2b9;
+  --color-surface-container: #0f1930;
+  --color-primary-fixed: #8d98ff;
+  --color-outline: #6d758c;
+  --color-on-secondary-fixed: #4f0089;
+  --color-on-background: #dee5ff;
+  --color-on-secondary: #33005b;
+  --color-background: #060e20;
+  --color-on-primary-fixed: #000000;
+  --color-on-primary: #101b8b;
+  --color-tertiary-container: #65fde6;
+  --color-on-tertiary-fixed-variant: #00695e;
+  --color-surface-variant: #192540;
+  --color-surface-container-low: #091328;
+  --color-secondary: #c180ff;
+  --color-surface-container-lowest: #000000;
+  --color-on-surface-variant: #a3aac4;
+  --color-tertiary-fixed-dim: #54eed8;
+  --color-inverse-surface: #faf8ff;
+  --color-on-tertiary-container: #005e54;
+  --color-error-container: #a70138;
+  --color-surface-tint: #9fa7ff;
+  --color-secondary-fixed: #e5c6ff;
+  --color-secondary-dim: #9c48ea;
+  --color-tertiary: #c6fff3;
+  --color-on-tertiary: #00685c;
+  --color-on-secondary-container: #e9cdff;
+  --font-headline: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+.glass-card {
+  background: rgba(25, 37, 64, 0.45);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(159, 167, 255, 0.1);
+}
+.shimmer-border {
+  position: relative;
+}
+.shimmer-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(159, 167, 255, 0.4), transparent, rgba(193, 128, 255, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.mermaid {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  min-height: 120px;
+}
+
+/* Mermaid fallback: show placeholder until rendered */
+.mermaid:not([data-processed])::after {
+  content: '다이어그램을 불러오는 중...';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7684;
+  font-size: 14px;
+  width: 100%;
+  min-height: 120px;
+}
+
+.mermaid[data-processed]::after {
+  display: none;
+}
+
+.mermaid-fallback {
+  display: none;
+}
+
+/* Diagram pinch-zoom wrapper */
+.diagram-zoom-wrap {
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+.diagram-zoom-wrap .mermaid svg {
+  min-width: 600px;
+}
+
+.diagram-zoom-hint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  color: #6b7684;
+  font-size: 12px;
+  padding: 6px 0;
+  opacity: 0.7;
+}
