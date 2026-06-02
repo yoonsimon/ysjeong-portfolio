@@ -28,8 +28,16 @@ _bmad-output
 CLAUDE.md
 *.pptx
 
-# Personal / internal docs (do not publish)
+# Job-application materials (do not publish) — 정본 위치는 applications/
+applications/
+# 루트에 흘러도 안전하도록 형식별 백업 패턴 (resume/interview 전 포맷)
+interview_*.md
+mock_interview_*.md
 resume_*.md
+resume_*.pdf
+resume_*.html
+resume_*.docx
+# Personal / internal docs (do not publish)
 DR-*.md
 PRD_*.md
 portfolio_index.md
@@ -40,6 +48,9 @@ fanding-scraper/
 INVITE/
 docs/
 personal/
+# 기타 내부 클립 / 외부 참고자료 (do not publish)
+260512 대나무숲 정리.html
+awesome-design-md/
 # Internal BMAD / RAG materials (do not publish)
 기획실 RAG 사용 가이드/
 BMAD 실 사용 인원 대상 설명/
