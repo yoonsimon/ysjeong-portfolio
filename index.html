@@ -106,7 +106,7 @@
         <span class="material-symbols-rounded text-[24px]">query_stats</span>
       </div>
       <h3 class="text-[19px] font-bold text-[#191f28] mb-2">AI 도입 정착도 측정</h3>
-      <p class="text-[15px] text-[#4e5968] leading-[1.6]">L0~L5 6단계 정착도 척도 자체 설계 + 9문항 설문 + 8명 초기 측정. 측정 인프라가 없는 곳에서 측정을 시작합니다.</p>
+      <p class="text-[15px] text-[#4e5968] leading-[1.6]">L0~L5 6단계 정착도 척도와 9문항 설문 자체 설계. 기획팀 중앙값 L3 도달을 확인하고 1위 블로커를 식별해 액션으로 연결. 측정 인프라가 없는 곳에서 측정을 시작합니다.</p>
     </div>
     <!-- Card 2 -->
     <div class="bg-white p-6 rounded-[24px] shadow-sm ring-1 ring-[#f2f4f6] hover:-translate-y-1 transition-transform">
@@ -147,6 +147,7 @@
     <button class="tab-btn active px-3 md:px-5 py-3 text-[15px] font-bold text-[#059669] border-b-[3px] border-[#059669] whitespace-nowrap transition-colors" data-target="tab-deployment">배포 거버넌스(CI/CD)</button>
     <button class="tab-btn px-3 md:px-5 py-3 text-[15px] font-medium text-[#6b7684] hover:text-[#191f28] border-b-[3px] border-transparent whitespace-nowrap transition-colors" data-target="tab-payment">결제망 통합 (Toss)</button>
     <button class="tab-btn px-3 md:px-5 py-3 text-[15px] font-medium text-[#6b7684] hover:text-[#191f28] border-b-[3px] border-transparent whitespace-nowrap transition-colors" data-target="tab-oauth">간편 로그인 (Google)</button>
+    <button class="tab-btn px-3 md:px-5 py-3 text-[15px] font-medium text-[#6b7684] hover:text-[#191f28] border-b-[3px] border-transparent whitespace-nowrap transition-colors" data-target="tab-ia">IA 재설계 (1.6배)</button>
     <button class="tab-btn px-3 md:px-5 py-3 text-[15px] font-medium text-[#6b7684] hover:text-[#191f28] border-b-[3px] border-transparent whitespace-nowrap transition-colors" data-target="tab-bmad">기획 AI혁신 (BMAD)</button>
     <button class="tab-btn px-3 md:px-5 py-3 text-[15px] font-medium text-[#6b7684] hover:text-[#191f28] border-b-[3px] border-transparent whitespace-nowrap transition-colors" data-target="tab-erns">ERP 전산화 (OCR)</button>
   </div>
@@ -161,7 +162,26 @@
               <span class="text-[#6b7684] text-[13px] font-medium border-l border-[#e5e8eb] pl-2">Technical PO</span>
             </div>
             
-            <p class="text-[15px] text-[#4e5968]">운영 사고율을 0%로 만들고 즉시 롤백을 보장하는 엔터프라이즈급 아키텍처 구축</p>
+            <p class="text-[15px] text-[#4e5968]">운영 사고율을 0%로 만들고 즉시 롤백을 보장하는 안전망을 설계하고, 상점용 스테이징 서버(개발소스관리) 제품으로 발전시켰습니다.</p>
+        </div>
+        <!-- 정량 결과 박스 (2026-06 기준) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">신청 상점 사용 전환율</span>
+            <span class="text-[20px] font-bold text-[#059669]">2.8% → 6.6%</span>
+          </div>
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">누적 배포</span>
+            <span class="text-[20px] font-bold text-[#059669]">51회</span>
+          </div>
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">정기배포 개선</span>
+            <span class="text-[20px] font-bold text-[#059669]">5종 완료</span>
+          </div>
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">검증 체계</span>
+            <span class="text-[20px] font-bold text-[#191f28]">18단계</span>
+          </div>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
     
@@ -193,7 +213,7 @@ flowchart LR
                 <div>
                     <h3 class="text-[20px] font-bold text-[#191f28] mb-2">운영/스테이징의 완벽한 시스템 격리</h3>
                     <p class="text-[16px] text-[#4e5968] leading-[1.6]">
-                        파편화된 기존의 개발 서버를 버리고 안전한 <strong>별도의 스테이징(Staging) 서버</strong>를 구축했습니다. 관리자는 <strong>에러 로그 수집망</strong> 및 커스터마이징 충돌 파악용 중앙 대시보드를 통해 운영에 반영하기 전 배포 내역의 성공/실패 여부를 수치로 모니터링할 수 있습니다.
+                        파편화된 기존의 개발 서버를 버리고 안전한 <strong>별도의 스테이징(Staging) 서버</strong>를 구축했습니다. 관리자는 <strong>에러 로그 수집망</strong> 및 커스터마이징 충돌 파악용 중앙 대시보드를 통해 운영에 반영하기 전 배포 내역의 성공/실패 여부를 수치로 모니터링할 수 있습니다. 운영 과정에서 소스만 반영되고 쇼핑몰 스킨은 누락되던 <strong>동기화 결함을 직접 발견</strong>해 스킨 동기화와 파일별 검증을 포함한 정기배포 5종으로 개선했고, 배포 실패율을 별도 안정성 지표로 도입해 관리하고 있습니다.
                     </p>
                 </div>
             </div>
@@ -258,7 +278,7 @@ flowchart LR
       </p>
       <div class="p-3 bg-[#f9fafb] rounded-[16px] text-[14px]">
         <span class="text-[#191f28] font-bold block mb-1">비즈니스 임팩트</span>
-        <span class="text-[#6b7684]">대형 가맹점(굽네치킨 등) 도입 완료 및 모객 속도 한계 돌파. 오픈 1일 만에 59개 상점 즉시 연동.</span>
+        <span class="text-[#6b7684]">오픈 전 500여 고객사 사용 의사 확보, 오픈 1일 만에 59개 상점 즉시 연동. 대형 가맹점(굽네치킨 등) 도입과 사내 타 플랫폼(샵바이) 확대 적용.</span>
       </div>
 
       <!-- TossPay Integration Block -->
@@ -348,6 +368,61 @@ sequenceDiagram
     </div>
       </div>
 
+<!-- Tab 2-2: Admin IA Redesign -->
+      <div id="tab-ia" class="tab-content hidden animate-fade-in transition-opacity duration-300">
+        <div class="mb-6">
+            <h3 class="text-[22px] md:text-[24px] font-bold text-[#191f28] mb-2 flex items-center gap-2"><span class="material-symbols-rounded text-[#059669]">space_dashboard</span> 관리자 IA 재설계, 설정 완료율 1.6배 (실패와 회복)</h3>
+            <div class="flex items-center gap-2 mb-3 mt-1">
+              <span class="px-2.5 py-1 bg-[#191f28] text-white rounded-[6px] text-[12px] font-bold tracking-wide">NHN Commerce</span>
+              <span class="text-[#6b7684] text-[13px] font-medium border-l border-[#e5e8eb] pl-2">Technical PO</span>
+            </div>
+
+            <p class="text-[15px] text-[#4e5968]">첫 시도는 무산. 원인을 정량으로 다시 세운 뒤 같은 어드민 안에서 설정 완료율 1.6배로 회복했습니다.</p>
+        </div>
+        <!-- 정량 결과 박스 -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">설정 완료율</span>
+            <span class="text-[20px] font-bold text-[#059669]">1.6배 향상</span>
+          </div>
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">PG 신청률</span>
+            <span class="text-[20px] font-bold text-[#059669]">27% 상승</span>
+          </div>
+          <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
+            <span class="text-[#6b7684] text-[12px] block mb-1">연속 성과</span>
+            <span class="text-[20px] font-bold text-[#191f28]">OAuth 226개사 도입</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 md:p-8 rounded-[24px] shadow-sm ring-1 ring-[#f2f4f6]">
+          <p class="text-[16px] text-[#4e5968] leading-[1.6] mb-4">
+            2025 상반기, 고도몰 어드민에 디자인 시스템 적용과 IA 재설계, 용어 통일을 동시에 진행하는 전면 개편에 <strong>대시보드 담당</strong>으로 참여했습니다. 신규 기능과 숨겨진 기능에 대한 운영자 인지율이 낮은 상태가 출발점이었습니다.
+          </p>
+          <div class="p-3 bg-[#f9fafb] rounded-[16px] text-[14px] mb-5">
+            <span class="text-[#191f28] font-bold block mb-1">측정 기준</span>
+            <span class="text-[#6b7684]">배포 전후 동기간 신규 가입 코호트 비교. 관리자 메인과 초기 설정 동선을 히트맵과 로그로 분석해 이탈이 큰 지점을 우선 재배치했습니다.</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-[#f9fafb] p-5 rounded-[16px] border border-[#e5e8eb]">
+              <strong class="text-[#d97706] text-[13px] block mb-1.5">첫 시도와 무산</strong>
+              <p class="text-[13.5px] text-[#4e5968] leading-[1.6]">관리자 메인에 기능 소개용 숏폼 카드를 노출하자는 가설은 의사결정 자리에서 무산됐습니다. 정성 피드백에 정량 근거로 반박하지 못했고, 콘텐츠 생성과 갱신 주체를 사전에 합의하지 않아 운영 비용 우려가 결정타였습니다.</p>
+            </div>
+            <div class="bg-[#f9fafb] p-5 rounded-[16px] border border-[#e5e8eb]">
+              <strong class="text-[#059669] text-[13px] block mb-1.5">회복을 위한 재정의</strong>
+              <p class="text-[13.5px] text-[#4e5968] leading-[1.6]">후속 모듈에서 세 원칙을 고정했습니다. (1) 사전 KPI 정의(지표, 정의, 집계 윈도우) (2) 운영 담당 명시 (3) 히트맵, VOC, 로그로 정량 근거 확보. 이 원칙 위에서 설정 완료율 1.6배로 회복했고, PG 신청률 27% 상승과 Google OAuth 226개사 도입으로 이어졌습니다.</p>
+            </div>
+          </div>
+
+          <div class="border-t border-[#f2f4f6] pt-5 mt-6">
+            <p class="text-[15px] text-[#6b7684] leading-[1.6]">
+              새 도메인 진입 시 파악 시간을 사전에 정량화하지 않으면 정성 피드백에 반박할 수 없다는 것, 운영 의존 기능은 기능보다 담당 합의가 우선이라는 것을 이 실패로 체득해 이후 기획의 기본값으로 삼고 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
 <!-- Tab 3: BMAD -->
       <div id="tab-bmad" class="tab-content hidden animate-fade-in transition-opacity duration-300">
         <div class="mb-6">
@@ -358,7 +433,7 @@ sequenceDiagram
               <span class="text-[#6b7684] text-[13px] font-medium border-l border-[#e5e8eb] pl-2">AI-Native PO</span>
             </div>
 
-            <p class="text-[15px] text-[#4e5968]">Figma 중심의 병목을 없애고, AI 비서 기반의 5단계 마크다운 문서 릴레이 파이프라인으로 전환. 측정 인프라가 없는 환경에서 초기 정착도 측정을 직접 설계해 전사 AX 의사결정의 근거로 활용했습니다.</p>
+            <p class="text-[15px] text-[#4e5968]">Figma 중심의 병목을 없애고, AI 비서 기반의 5단계 마크다운 문서 릴레이 파이프라인으로 전환. 일괄 배포 실패를 정량 재분석해 순차 확산으로 재설계했고, 측정 체계를 얹어 6팀이 동일 양식 위에서 일하는 상태로 정착시켰습니다. 측정 결과는 전사 AX 의사결정의 근거로 활용됩니다.</p>
         </div>
         <!-- 정량 결과 박스 -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
@@ -367,12 +442,12 @@ sequenceDiagram
             <span class="text-[20px] font-bold text-[#059669]">30% 단축</span>
           </div>
           <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
-            <span class="text-[#6b7684] text-[12px] block mb-1">정착도 척도</span>
-            <span class="text-[20px] font-bold text-[#059669]">L0~L5 6단계</span>
+            <span class="text-[#6b7684] text-[12px] block mb-1">동일 양식 정착</span>
+            <span class="text-[20px] font-bold text-[#059669]">6팀 · 12주</span>
           </div>
           <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
-            <span class="text-[#6b7684] text-[12px] block mb-1">사내 초기 측정</span>
-            <span class="text-[20px] font-bold text-[#059669]">8명 · 중앙값 L3</span>
+            <span class="text-[#6b7684] text-[12px] block mb-1">정착도 측정 (L0~L5)</span>
+            <span class="text-[20px] font-bold text-[#059669]">중앙값 L3 · L4 2명</span>
           </div>
           <div class="bg-white p-4 rounded-[16px] shadow-sm ring-1 ring-[#f2f4f6]">
             <span class="text-[#6b7684] text-[12px] block mb-1">전략 문서</span>
@@ -387,6 +462,16 @@ sequenceDiagram
       </h3>
       <p class="text-[16px] text-[#4e5968] leading-[1.6] bg-[#f9fafb] p-5 rounded-[16px]">
         Figma 안에 요구사항, 정책, 화면이 혼재되어 <strong>AI가 읽을 수 없고 맥락이 유실</strong>됩니다. 기획-디자인 간 핑퐁이 잦고, 아키텍처는 개발자 머릿속에만 존재하며, QA 기준이 불명확했습니다.
+      </p>
+    </div>
+
+    <div class="mb-10">
+      <h3 class="text-[22px] font-bold mb-4 flex items-center gap-2">
+        <span class="material-symbols-rounded text-[#d97706]">restart_alt</span>
+        실패와 재설계: V1 일괄 배포에서 순차 확산으로
+      </h3>
+      <p class="text-[16px] text-[#4e5968] leading-[1.6] bg-[#f9fafb] p-5 rounded-[16px]">
+        표준 양식을 6팀에 일괄 배포한 V1은 4주간 자발 채택이 거의 없었습니다. 팀 간 AI 이해도 편차를 과소평가한 채 방법론 학습까지 동시에 요구한 것이 원인이었습니다. V1을 폐기 수준으로 재정량 분석(3,226줄, 5쟁점)한 뒤 <strong>순차 확산으로 전환하고 그 위에 L0~L5 측정 체계를 얹어 재설계</strong>했습니다. 이후 6팀 다직군 구성원과 데일리 스크럼을 12주 운영하며 동일 양식 정착과 기획 리드타임 30% 단축에 도달했습니다.
       </p>
     </div>
 
