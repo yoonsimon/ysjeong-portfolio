@@ -10,30 +10,20 @@ const TARGET_TEXTS = {
     'hero-badge': { html: '<span class="material-symbols-rounded text-[16px]">info</span> Platform Operations PM' },
     'hero-headline': { html: '복잡한 비즈니스 로직을<br/>시스템으로 자동화하는<br/><span class="text-[#059669]">플랫폼 PM</span>입니다.' },
     'hero-sub': { text: '수천 협력사의 운영 비용을 줄이고, 정책의 무결성을 시스템으로 보장합니다. 수기 업무를 자동화하고, 예외 없는 프로세스를 설계합니다.' },
-    'impact-0-num': { text: '100%' },
-    'impact-0-label': { text: '정책 무결성' },
-    'impact-1-num': { text: '226개' },
-    'impact-1-label': { text: '협력사 셀프서비스 전환' },
-    'impact-2-num': { text: '20+' },
-    'impact-2-label': { text: '페이지 정산 정책 통합' },
-    'impact-3-num': { text: '40%' },
-    'impact-3-label': { text: '운영 리소스 절감' },
-    'proj-bmad': { text: '파편화된 기획 프로세스를 5단계 표준화 파이프라인으로 전환하여 부서 간 병목 제거' },
-    'proj-deploy': { text: '정책 위반을 시스템으로 원천 차단하는 5단계 검증 게이트 및 자동 롤백 체계 구축' },
-    'proj-oauth': { text: '수천 고객사 대상 셀프서비스 온보딩 자동화 및 예외 시나리오 사전 정의' },
-    'proj-payment': { text: '관리자·주문·환불·정산·CRM 20+ 페이지를 관통하는 정산 정책 표준화 아키텍처 설계' },
-    'proj-erns': { text: '500여 개의 수기 운영 양식을 단일 웹 표준으로 통합하고 데이터 검증 자동화 체계 구축' },
-    'cta-title': { text: '운영 효율화, 함께 설계하고 싶으신가요?' },
-    'cta-sub': { text: '복잡한 비즈니스 룰의 시스템화와 데이터 기반 운영 개선에 관심이 있으시다면, 편하게 연락주세요.' },
   },
   celimax: {
     'meta-desc': { attr: 'content', value: '실무자 옆에 앉아 비효율을 직접 시스템화하는 PM 정윤상. 토스페이/OAuth/BMAD/Dooray/SSOT-Guard 등 어드민·바이브 코딩·AI 도구 직접 개발 포트폴리오.' },
     'og-title': { attr: 'content', value: 'PM 정윤상 | 어드민 시스템 + 바이브 코딩' },
-    'og-desc': { attr: 'content', value: '실무자 페인포인트를 발굴해 시스템화하는 PM. 어드민·B2B 백오피스·이커머스·바이브 코딩 — 직접 만든 결과물로 입증.' },
+    'og-desc': { attr: 'content', value: '실무자 페인포인트를 발굴해 시스템화하는 PM. 어드민, B2B 백오피스, 이커머스, 바이브 코딩까지 직접 만든 결과물로 입증.' },
     'hero-badge': { html: '<span class="material-symbols-rounded text-[16px]">info</span> PM for 셀리맥스 테크셀 · 바이브 코딩 / AI-Native' },
     'hero-headline': { html: '실무자 옆에 앉아 비효율을<br/><span class="text-[#059669]">직접 시스템화</span>하는 PM입니다.' },
-    'hero-sub': { text: '어드민·B2B·이커머스·바이브 코딩 — 모두 직접 만든 결과물로 입증합니다. AI 도구는 슬로건이 아니라 제 일상의 작동 원칙입니다.' },
+    'hero-sub': { text: '어드민, B2B, 이커머스, 바이브 코딩 모두 직접 만든 결과물로 입증합니다. AI 도구는 슬로건이 아니라 제 일상의 작동 원칙입니다.' },
   }
+};
+
+const TARGET_TITLES = {
+  oliveyoung: '플랫폼 운영 PM 정윤상 | Portfolio',
+  celimax: 'PM 정윤상 | 셀리맥스 테크셀 지원',
 };
 
 // Apply target-specific overrides
@@ -43,10 +33,8 @@ if (targetMeta) {
   const texts = TARGET_TEXTS[target];
   if (texts) {
     // Update page title
-    if (target === 'oliveyoung') {
-      document.title = '플랫폼 운영 PM 정윤상 | Portfolio';
-    } else if (target === 'celimax') {
-      document.title = 'PM 정윤상 | 셀리맥스 테크셀 지원';
+    if (TARGET_TITLES[target]) {
+      document.title = TARGET_TITLES[target];
     }
     // Apply text replacements
     Object.entries(texts).forEach(([key, config]) => {
