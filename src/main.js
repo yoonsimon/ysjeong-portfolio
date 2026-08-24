@@ -51,6 +51,13 @@ if (targetMeta) {
   }
 }
 
+// Contact email decoded at runtime (not present as plaintext in shipped HTML)
+// to keep it out of static-HTML scrapers that harvest mailto: addresses for spam.
+const contactLink = document.getElementById('contact-cta');
+if (contactLink) {
+  contactLink.setAttribute('href', `mailto:${atob('eWFuMDMwMTNAZ21haWwuY29t')}`);
+}
+
 // Initialize mermaid — startOnLoad: false to prevent rendering inside hidden tabs
 mermaid.initialize({
   startOnLoad: false,
