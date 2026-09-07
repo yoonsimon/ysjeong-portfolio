@@ -237,12 +237,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => activateTab(btn));
     });
 
-    // Target-specific default tab (BMAD로 바꾸려면 'tab-payment' → 'tab-bmad')
+    // Common portfolio starts with IA; keep the target-specific default.
     const TARGET_DEFAULT_TAB = {
       celimax: 'tab-payment',
     };
     const portfolioTarget = document.querySelector('meta[name="portfolio-target"]')?.content;
-    const defaultTabId = portfolioTarget && TARGET_DEFAULT_TAB[portfolioTarget];
+    const defaultTabId = (portfolioTarget && TARGET_DEFAULT_TAB[portfolioTarget]) || 'tab-ia';
     if (defaultTabId) {
       const defaultTabBtn = document.querySelector(`[data-target="${defaultTabId}"]`);
       if (defaultTabBtn) activateTab(defaultTabBtn);
